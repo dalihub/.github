@@ -56,3 +56,5 @@ The process to contribute to these repos is as follows:
   This will inform :inbox_tray: the maintainers who can then review the code and then run a verification which will do the **Build & Tests Verification**.
 - Any problems with this will be reported back to the committer who can then fix the problems and submit a new patchset.
 - Once verified, the code will be **approved on gerrit** and then **merged** :superhero:.
+
+To contribute to NUI, please follow the guidelines in Samsung's TizenFX repo [here](https://github.com/Samsung/TizenFX).
