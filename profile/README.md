@@ -52,6 +52,7 @@ The process to contribute to these repos is as follows:
 - **Push Patch to Gerrit:** Create a patch according to the [tizen gerrit commit guidelines](https://docs.tizen.org/platform/developing/contributing/) and push to the **devel/master** branch:
   ```git push origin HEAD:refs/for/devel/master```
 - **Add Reviewers:** You can add the appropriate [maintainers](https://review.tizen.org/gerrit/#/admin/groups/740,members) to the patch.
+- The DALi Core, Adaptor, Toolkit and demo repositories all share the same maintainer group.
 - **Raise Issue:** Add an issue on Github, e.g. for DALi Core, go [here](https://github.com/dalihub/dali-core/issues). 
   This will inform :inbox_tray: the maintainers who can then review the code and then run a verification which will do the **Build & Tests Verification**.
 - Any problems with this will be reported back to the committer who can then fix the problems and submit a new patchset.
