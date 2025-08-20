@@ -1,6 +1,6 @@
 ## DALi: A 3D Graphics Engine
 
-![](images/dali.png)
+![DALi Logo](images/dali.png)
 
 Welcome :wave: to the **DALi Hub**, the home for the **Dynamic Animation Library (DALi)** & the **Natural User Interface (NUI)**.
 
@@ -59,3 +59,4 @@ The process to contribute to these repos is as follows:
 - Once verified, the code will be **approved on gerrit** and then **merged** :superhero:.
 
 To contribute to NUI, please follow the guidelines in Samsung's TizenFX repo [here](https://github.com/Samsung/TizenFX).
+
