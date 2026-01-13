@@ -49,6 +49,7 @@ On Tizen.org we use [![](images/gerrit-logo.png) Gerrit](https://review.tizen.or
 The process to contribute to these repos is as follows:
 
 ![](images/process.png)
+- Please follow the coding guidelines as specified in the [Coding Guidelines](guidelines/README.md). 
 - **Push Patch to Gerrit:** Create a patch according to the [tizen gerrit commit guidelines](https://docs.tizen.org/platform/developing/contributing/)
   - All changes require a ```Change-ID``` tag in the commit message, and use ```clang-formatter-20``` to format the code appropriately.
     The [Git commit hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks), [pre-commit](hooks/pre-commit), and [commit-msg](hooks/commit-msg)
