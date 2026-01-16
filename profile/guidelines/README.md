@@ -1,6 +1,26 @@
 # DALi Coding Guidelines
 To ensure the quality and consistency of contributions to DALi, all developers are required to adhere to the DALi Coding Style and Conventions. Additionally, it is crucial to guarantee that all code is ABI (Application Binary Interface) compatible, maintaining seamless integration and stability across different components and platforms.
 
+## Table of Contents
+- [Coding Style](#coding-style)
+- [Coding Convention](#coding-convention)
+- [ABI Compatibility](#abi-compatibility)
+  - [Class Layout & Memory Alignment](#class-layout--memory-alignment)
+  - [Virtual Function Tables (vtable)](#virtual-function-tables-vtable)
+  - [Name Mangling](#name-mangling)
+  - [Classes Vs. Structs](#classes-vs-structs)
+  - [Data Type Sizes and Endianness](#data-type-sizes-and-endianness)
+  - [Static and Global Variables](#static-and-global-variables)
+  - [Enumerations](#enumerations)
+  - [Explicitly Exporting Symbols](#explicitly-exporting-symbols)
+  - [Deprecation of APIs](#deprecation-of-apis)
+  - [Categories of APIs in DALi Libraries](#categories-of-apis-in-dali-libraries)
+    - [Public API](#public-api)
+    - [Devel API](#devel-api)
+    - [Integration API](#integration-api)
+  - [Use of the Standard Template Library (STL)](#use-of-the-standard-template-library-stl)
+
+
 ## Coding Style
 A consistent coding style is essential for enhancing readability, maintainability, and collaboration in software development. It ensures that code is easy to understand and modify, reduces errors, and facilitates smoother teamwork. By adhering to a uniform style, developers can improve onboarding for new team members, leverage automation tools effectively, and project professionalism, ultimately leading to more robust and reliable software.
 
@@ -131,7 +151,7 @@ Example Timeline:
 ### Categories of APIs in DALi Libraries
 APIs exported by the DALi libraries are categorized into three distinct groups, each with specific usage and stability guarantees:
 
-#### Public API:
+#### Public API
 These are designed for application developers to build their applications and are guaranteed to remain consistent across DALi versions unless explicitly deprecated. Application developers can rely on these APIs for long-term development, ensuring backward compatibility. This API can be found in the ``public-api`` folder.
 
 When adding an API to the public API, it's essential to document the version in which the API was introduced using a doxygen tag:
@@ -146,7 +166,7 @@ void MyNewFunction();
 
 The @SINCE_1_9.28 tag indicates that the API MyNewFunction was introduced in version 1.9.28 of the library.
 
-#### Devel API:
+#### Devel API
 These are experimental APIs used by DALi developers to create new effects and features, and are subject to change at any point until they are moved to the Public API. They are intended for internal development and testing, not for application developers. This API can be found in the ``devel-api`` folder.
 
 C-style functions can be used to extend the functionality of a class by taking a handle to the class as the first parameter. This approach allows for additional features without modifying the class itself. Here's an example:
@@ -155,5 +175,10 @@ C-style functions can be used to extend the functionality of a class by taking a
 DALI_CORE_API Vector2 CalculateScreenPosition(Actor actor);
 ```
 
-#### Integration API:
+#### Integration API
 These APIs are used for communication between DALi libraries, and can be modified by DALi developers as needed, as all libraries are compiled and installed together. The are internal to the DALi ecosystem, and not exposed to application developers. This API can be found in the ``integration-api`` folder.
+
+### Use of the Standard Template Library (STL)
+The use of STL containers in public API headers is discouraged due to potential ABI issues that may arise from changes in compiler versions, as the memory layout and size of STL containers like ``std::vector`` and ``std::map`` can vary. While STL containers can be safely used internally or within ``.cpp`` files, exposing them in public APIs should be avoided.
+
+Similarly, ``std::string`` can suffer from ABI issues due to changes in memory layout or allocator behavior, but its use in the public API is not prohibited due to the performance and memory costs of wrapping it. However, ``std::string`` should only be used in the public API if absolutely necessary.
