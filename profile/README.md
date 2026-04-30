@@ -1,6 +1,6 @@
 ## DALi: A 3D Graphics Engine
 
-![](images/dali.png)
+![](images/dali-text.png)
 
 Welcome :wave: to the **DALi Hub**, the home for the **Dynamic Animation Library (DALi)** & the **Natural User Interface (NUI)**.
 
