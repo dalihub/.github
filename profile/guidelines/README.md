@@ -2,34 +2,36 @@
 To ensure the quality and consistency of contributions to DALi, all developers are required to adhere to the DALi Coding Style and Conventions. Additionally, it is crucial to guarantee that all code is ABI (Application Binary Interface) compatible, maintaining seamless integration and stability across different components and platforms.
 
 ## Table of Contents
-- [Coding Style](#coding-style)
-- [Coding Convention](#coding-convention)
-- [ABI Compatibility](#abi-compatibility)
-  - [Class Layout & Memory Alignment](#class-layout--memory-alignment)
-  - [Virtual Function Tables (vtable)](#virtual-function-tables-vtable)
-  - [Name Mangling](#name-mangling)
-  - [Classes Vs. Structs](#classes-vs-structs)
-  - [Data Type Sizes and Endianness](#data-type-sizes-and-endianness)
-  - [Static and Global Variables](#static-and-global-variables)
-  - [Enumerations](#enumerations)
-  - [Explicitly Exporting Symbols](#explicitly-exporting-symbols)
-  - [Deprecation of APIs](#deprecation-of-apis)
-  - [Categories of APIs in DALi Libraries](#categories-of-apis-in-dali-libraries)
-    - [Public API](#public-api)
-    - [Devel API](#devel-api)
-    - [Integration API](#integration-api)
-  - [Use of the Standard Template Library (STL)](#use-of-the-standard-template-library-stl)
+- [DALi Coding Guidelines](#dali-coding-guidelines)
+  - [Table of Contents](#table-of-contents)
+  - [Coding Style](#coding-style)
+  - [Coding Convention](#coding-convention)
+  - [ABI Compatibility](#abi-compatibility)
+    - [Class Layout \& Memory Alignment](#class-layout--memory-alignment)
+    - [Virtual Function Tables (vtable)](#virtual-function-tables-vtable)
+    - [Name Mangling](#name-mangling)
+    - [Classes Vs. Structs](#classes-vs-structs)
+    - [Data Type Sizes and Endianness](#data-type-sizes-and-endianness)
+    - [Static and Global Variables](#static-and-global-variables)
+    - [Enumerations](#enumerations)
+    - [Explicitly Exporting Symbols](#explicitly-exporting-symbols)
+    - [Deprecation of APIs](#deprecation-of-apis)
+    - [Categories of APIs in DALi Libraries](#categories-of-apis-in-dali-libraries)
+      - [Public API](#public-api)
+      - [Devel API](#devel-api)
+      - [Integration API](#integration-api)
+    - [Use of the Standard Template Library (STL)](#use-of-the-standard-template-library-stl)
 
 
 ## Coding Style
 A consistent coding style is essential for enhancing readability, maintainability, and collaboration in software development. It ensures that code is easy to understand and modify, reduces errors, and facilitates smoother teamwork. By adhering to a uniform style, developers can improve onboarding for new team members, leverage automation tools effectively, and project professionalism, ultimately leading to more robust and reliable software.
 
-DALi's coding guidelines can be found [here](https://htmlpreview.github.io/?https://github.com/dalihub/dali-core/blob/master/docs/coding-style.html). It is also available in the [DALi Core](https://github.com/dalihub/dali-core/blob/master/docs/coding-style.html) repository.
+DALi's coding guidelines can be found [here](coding-style.md).
 
 ## Coding Convention
 Coding conventions are essential for fostering a cohesive and efficient development process. They standardize code structure, naming, and formatting, making it easier for developers to read, understand, and maintain the codebase.
 
-DALi has a coding convention which can be found [here](https://htmlpreview.github.io/?https://github.com/dalihub/dali-core/blob/master/docs/coding-convention.html). It is also available in the [DALi Core](https://github.com/dalihub/dali-core/blob/master/docs/coding-convention.html) repository.
+DALi has a coding convention which can be found [here](coding-convention.md).
 
 ## ABI Compatibility
 The ABI (Application Binary Interface) defines how software components interact at the binary level, ensuring compatibility between compiled code, libraries, and the runtime environment. It specifies details like function call mechanisms, data structure layouts, and object file formats, enabling different parts of a program to work together seamlessly. ABI stability is crucial because it allows developers to update or replace components without breaking the entire system, facilitating modular design and long-term maintainability. By adhering to ABI standards, software can achieve cross-platform compatibility, efficient updates, and smoother integration with third-party libraries, ultimately enhancing reliability and reducing development overhead.
