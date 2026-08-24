@@ -181,6 +181,6 @@ DALI_CORE_API Vector2 CalculateScreenPosition(Actor actor);
 These APIs are used for communication between DALi libraries, and can be modified by DALi developers as needed, as all libraries are compiled and installed together. The are internal to the DALi ecosystem, and not exposed to application developers. This API can be found in the ``integration-api`` folder.
 
 ### Use of the Standard Template Library (STL)
-The use of STL containers in public API headers is discouraged due to potential ABI issues that may arise from changes in compiler versions, as the memory layout and size of STL containers like ``std::vector`` and ``std::map`` can vary. While STL containers can be safely used internally or within ``.cpp`` files, exposing them in public APIs should be avoided.
+The use of STL containers in public API headers is not allowed due to potential ABI issues that may arise from changes in compiler versions, as the memory layout and size of STL containers like ``std::vector`` and ``std::map`` can vary. While STL containers can be safely used internally or within ``.cpp`` files, exposing them in public APIs is strictly prohibited.
 
-Similarly, ``std::string`` can suffer from ABI issues due to changes in memory layout or allocator behavior, but its use in the public API is not prohibited due to the performance and memory costs of wrapping it. However, ``std::string`` should only be used in the public API if absolutely necessary.
+Similarly, ``std::string`` and ``std::string_view`` can suffer from ABI issues due to changes in memory layout or allocator behavior, so instead ``Dali::String`` and ``Dali::StringView`` should be used.
