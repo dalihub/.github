@@ -61,7 +61,7 @@ int error_cnt;    // Bad.
 
 ### File Names
 
-Filenames should be all lowercase and can include underscores dashes (`-`). Do not use underscores in filenames (`_`).
+Filenames should be all lowercase and can include dashes (`-`). Do not use underscores in filenames (`_`).
 
 #### Examples
 
